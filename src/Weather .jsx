@@ -6,10 +6,11 @@ const Weather = (props) => {
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    const fetchData = async () => {
-      const API_KEY = "e99d57bf93b9887bbc4342f795766e94";
+    const fetchData = async () => {      
+      const API_KEY = import.meta.env.VITE_API_KEY; //Me traigo la api key del archivo .env
+      const URL = import.meta.env.VITE_URL; //Me traigo la URL del archivo .env
       const city = props.city;
-      const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}&q=${city}&lang={lang}&units=metric`);
+      const response = await fetch(`${URL}?appid=${API_KEY}&q=${city}&lang={lang}&units=metric`);
       const data = await response.json();
       
       if (data.cod === "404") {
