@@ -23,12 +23,12 @@ const App = () => {
 
   // Función para obtener la imagen según la temperatura
   const getTemperatureImage = () => {
-    if (temperature === null) return "/images/loading.gif"; // Imagen por defecto
-    if (temperature < 5) return "/images/frio.gif";
-    if (temperature >= 5 && temperature <= 15) return "/images/frio_moderado.gif";
-    if (temperature >= 16 && temperature <= 25) return "/images/ambiente.gif";
-    if (temperature > 25 && temperature <= 35) return "/images/calor_moderado.gif";
-    if (temperature > 35) return "/images/calor.gif";
+    if (temperature === null) return "images/loading.gif"; // Imagen por defecto
+    if (temperature < 5) return "images/frio.gif";
+    if (temperature >= 5 && temperature <= 15) return "images/frio_moderado.gif";
+    if (temperature >= 16 && temperature <= 25) return "images/ambiente.gif";
+    if (temperature > 25 && temperature <= 35) return "images/calor_moderado.gif";
+    if (temperature > 35) return "images/calor.gif";
      
   };
 
